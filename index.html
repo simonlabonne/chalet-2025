@@ -24,10 +24,10 @@
         const x = setInterval(function() {
             const now = new Date().getTime();
             const distance = countDownDate - now;
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("countdown").innerHTML = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("countdown").innerHTML = (hours < 10 ? '0' + hours : hours) + ":" + (minutes < 10 ? '0' + minutes : minutes) + ":" + (seconds < 10 ? '0' + seconds : seconds);
         }, 1000);
     </script>
 </body>
